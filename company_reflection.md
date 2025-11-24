@@ -1,7 +1,7 @@
 # Company Reflection – Focus Bear
 
 ## 1. Why do you think Focus Bear was created?
-There are five main reasons behind the creation of the Focus Bear app, and the first one is to remove distractions from everyday life. These days, everyone struggles with reduced focus, especially because of smartphones and the internet. I personally find myself getting very distracted by social media, and as a young person, constantly watching new movies or exploriia.ng the internet often causes me to lose discipline and focus on my studies and internship.
+There are five main reasons behind the creation of the Focus Bear app, and the first one is to remove distractions from everyday life. These days, everyone struggles with reduced focus, especially because of smartphones and the internet. I personally find myself getting very distracted by social media, and as a young person, constantly watching new movies or exploring the internet often causes me to lose discipline and focus on my studies and internship.
 
 However, Focus Bear helps people like me stay productive throughout the entire day from morning coffee to going to bed at night. It keeps track of all your daily activities and blocks distractions across all your devices, helping you stay disciplined, consistent, and productive.
 
