@@ -3,7 +3,7 @@
 **Placement Dates:** 17/11/2025 – 30/01/2026  
 **Required Hours:** 160  
 **Planned Hours:** 176 (buffer included)  
-**Intern:** Gurmanjot Jassal
+**Intern:** Mohamed Arsh Ghanchi
 
 ---
 
