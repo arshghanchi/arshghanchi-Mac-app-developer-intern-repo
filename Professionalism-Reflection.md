@@ -70,7 +70,7 @@ Understand professional expectations at Focus Bear, how to communicate effective
 - Supervisors value initiative, clarity, and professionalism  
 - Come prepared, research first, and bring questions  
 - Take notes and follow through on action items  
-- Don’t wait for instructions—propose what you think should happen next  
+- Don’t wait for instructions propose what you think should happen next  
 - Escalate communication properly:
   - Email → low urgency  
   - Discord/Teams → medium  
