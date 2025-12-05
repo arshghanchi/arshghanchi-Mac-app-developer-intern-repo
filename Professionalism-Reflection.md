@@ -40,7 +40,7 @@ Understand professional expectations at Focus Bear, how to communicate effective
 - Using **clear, direct, and friendly** language  
 - Asking for clarification instead of assuming  
 - Avoiding sarcasm or ambiguous wording  
-- Giving teammates time to respond—respecting async culture  
+- Giving teammates time to respond respecting async culture  
 - Keeping messages organised and concise  
 - Acknowledging others’ efforts and contributions  
 - Showing appreciation and maintaining a positive tone  
