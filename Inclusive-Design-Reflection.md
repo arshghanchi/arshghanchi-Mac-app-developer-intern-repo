@@ -126,7 +126,7 @@ Here are a few gentle suggestions to help build momentum:
 2. Try shorter session lengths to reduce pressure.  
 3. Adjust notifications so they feel supportive, not overwhelming.  
 
-If you want, I can help you customise the setup so it suits your energy and pace. You’re doing your best — we’re here to support you. 💛
+If you want, I can help you customise the setup so it suits your energy and pace. You’re doing your best  we’re here to support you. 💛
 
 ---
 
