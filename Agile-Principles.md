@@ -57,7 +57,7 @@ Agile prioritises adaptability, customer value, and continuous improvement.
 - More structured and ritual-based  
 
 **Kanban**
-- No fixed sprints—**continuous flow**  
+- No fixed sprints **continuous flow**  
 - Focuses on **visualising work**, limiting WIP (Work In Progress)  
 - No strict roles or ceremonies required  
 - Tasks move through the workflow at their own pace  
