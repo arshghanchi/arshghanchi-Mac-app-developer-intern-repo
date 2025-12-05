@@ -108,13 +108,13 @@ I typically work on:
 # Fun Facts & Quirks
 
 ### One thing people often misunderstand about me:
-- My quietness is not disinterest — I usually listen carefully and speak when I have something valuable to add.
+- My quietness is not disinterest - I usually listen carefully and speak when I have something valuable to add.
 
 ### A fun fact about me:
 - I enjoy working with both **software and hardware**, from Flutter apps to embedded systems.
 
 ### My work superpower:
-- **Structured problem-solving** — I can break down complex technical tasks into clear, manageable steps.
+- **Structured problem-solving** - I can break down complex technical tasks into clear, manageable steps.
 
 ---
 
