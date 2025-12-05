@@ -119,7 +119,7 @@ This makes the experience more manageable for users with executive dysfunction.
 > “I keep missing my focus sessions. I feel like I’m failing and the app isn’t helping.”
 
 **Supportive response:**  
-Hi! Thank you for sharing that — and please don’t be hard on yourself. Many people with ADHD and executive dysfunction have the same experience. Missing sessions doesn’t mean you’re failing.  
+Hi! Thank you for sharing that and please don’t be hard on yourself. Many people with ADHD and executive dysfunction have the same experience. Missing sessions doesn’t mean you’re failing.  
 
 Here are a few gentle suggestions to help build momentum:  
 1. Start with one small focus session per day.  
