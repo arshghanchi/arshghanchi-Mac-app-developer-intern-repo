@@ -91,7 +91,7 @@ Great teamwork happens when:
 - People show up prepared and follow through  
 - Feedback flows openly and respectfully  
 
-What made it effective was consistency, openness, and mutual support—qualities I want to embody at Focus Bear.
+What made it effective was consistency, openness, and mutual support qualities I want to embody at Focus Bear.
 
 ---
 
