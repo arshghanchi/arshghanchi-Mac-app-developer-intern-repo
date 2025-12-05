@@ -74,7 +74,7 @@ If I notice unusual activity, accidental exposure, or a potential breach:
 
 ## 1. Steps I Can Take to Handle Data Securely in My Daily Work
 - Carefully check what information I am pasting into AI tools or messages.  
-- Use secure storage only — no local unencrypted files.  
+- Use secure storage only no local unencrypted files.  
 - Avoid discussing user data publicly or with unauthorised people.  
 - Keep personal and work accounts separate.  
 - Follow access guidelines and avoid downloading data unnecessarily.  
