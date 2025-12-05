@@ -1,4 +1,4 @@
-m# User Manual for Mohamed Arsh Ghanchi
+# User Manual for Mohamed Arsh Ghanchi
 
 ## My Role
 I am working as a **Mac App Developer Intern** at Focus Bear.  
