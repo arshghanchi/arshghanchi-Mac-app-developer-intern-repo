@@ -66,7 +66,7 @@ If I notice unusual activity, accidental exposure, or a potential breach:
 2. **Document what happened** (time, file involved, platform, any screenshots).  
 3. **Revoke access** if credentials were involved (API key refresh, password change).  
 4. **Follow the escalation path** provided by Focus Bear.  
-5. Never try to hide or minimise the incident — transparency helps the team act quickly.  
+5. Never try to hide or minimise the incident transparency helps the team act quickly.  
 
 ---
 
