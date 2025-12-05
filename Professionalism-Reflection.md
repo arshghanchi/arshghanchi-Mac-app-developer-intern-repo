@@ -52,7 +52,7 @@ Understand professional expectations at Focus Bear, how to communicate effective
 ### **Giving feedback:**
 - Focus on behaviours and actions, not personality  
 - Be specific: *what* needs improvement and *why*  
-- Assume good intent—everyone wants to do well  
+- Assume good intent everyone wants to do well  
 - Provide examples and suggestions  
 
 ### **Receiving feedback:**
@@ -78,7 +78,7 @@ Understand professional expectations at Focus Bear, how to communicate effective
   - Call → emergency  
 
 ### **Proactivity is essential:**  
-You are expected to become increasingly self-led, using supervisors for guidance—not micromanagement.
+You are expected to become increasingly self-led, using supervisors for guidance not micromanagement.
 
 ---
 
