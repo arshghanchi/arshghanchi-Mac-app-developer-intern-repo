@@ -177,3 +177,5 @@ Improved readability and structure
 Only one clear path for invalid data
 
 The purpose (“Is the user an adult?”) is immediately obvious
+
+
