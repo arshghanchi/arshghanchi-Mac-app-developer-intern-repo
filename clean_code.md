@@ -302,3 +302,90 @@ Making the code more modular and scalable
 Reducing cognitive load — easier to understand how the order is processed
 
 Allowing future changes (new tax rules, discounts, fee calculations) without rewriting everything
+
+🧼 Code Formatting & Style Guides — Reflections
+⭐ Why is code formatting important?
+
+Consistent code formatting matters because it:
+
+Makes the code easier to read for everyone
+
+Reduces misunderstandings between developers
+
+Helps maintain a consistent coding style across a team
+
+Makes debugging faster (clean structure = clearer logic)
+
+Reduces "noise" in pull requests (no random spacing differences)
+
+Allows automated tools to catch mistakes early
+
+Following a style guide like Airbnb JavaScript Style Guide ensures predictable structure, naming, spacing, and best practices.
+
+🔧 ESLint + Prettier Setup
+
+I installed and configured both tools:
+
+npm install eslint prettier eslint-config-prettier eslint-plugin-prettier -D
+
+
+Created an ESLint config:
+
+{
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
+
+
+Added Prettier config:
+
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all"
+}
+
+
+Now the codebase automatically formats on save and flags style issues.
+
+🐞 What issues did the linter detect?
+
+The linter detected several common problems:
+
+Unused variables
+
+Missing semicolons
+
+Inconsistent quote usage (" vs ')
+
+Extra spaces and inconsistent indentation
+
+Long lines that needed breaking
+
+Unnecessary console logs
+
+Functions missing return statements
+
+Variables that should be const instead of let
+
+These are typical issues that linters catch early before they cause bigger problems.
+
+✨ Did formatting improve readability?
+
+Yes — after running Prettier and ESLint fixes:
+
+Code blocks were consistently indented
+
+Quotes, spacing, and semicolons became uniform
+
+Long, messy lines were automatically broken into readable segments
+
+Logical sections of the code became clearer
+
+The overall file looked much more professional and easier to understand
+
+Formatting doesn't change how the code works it changes how the code feels to read.
+And that makes a big difference for teamwork and maintainability.
