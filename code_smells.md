@@ -2,7 +2,7 @@
 ⭐ What Are Code Smells?
 
 Code smells are patterns in code that indicate deeper design or readability problems.
-They don’t stop the program from running, but they make future work harder.
+They don't stop the program from running, but they make future work harder.
 
 🔥 1. Magic Numbers & Strings
 ❌ Smelly Code
@@ -111,15 +111,11 @@ if (canAccess(user)) {
 🔥 6. Commented-Out Code
 ❌ Smelly Code
 // oldFunction();
-// oldValue = 23;
-newValue = 10;
-
-❌ Why It's Bad
-
-Commented-out code clutters the file — Git history already stores old versions.
+// let x = 23;
+let y = 10;
 
 ✅ Refactored Code
-newValue = 10;
+let y = 10;
 
 🔥 7. Inconsistent Naming
 ❌ Smelly Code
@@ -127,62 +123,52 @@ let x = 10;
 let Items = 20;
 let item_count = 30;
 
-❌ Why It's Bad
-
-Inconsistent casing and unclear names confuse readers.
-
 ✅ Refactored Code
 let itemCount = 10;
 let maxItems = 20;
 let minItems = 30;
 
-✨ Reflections
-🔍 What code smells did I find?
-
-I identified:
+📝 Reflections
+✔️ What code smells did I find?
 
 Magic numbers
 
-Long, unfocused functions
+Long, overly complex functions
 
 Duplicate code
 
-God classes with too many responsibilities
+God classes
 
-Deeply nested if statements
+Deep nested conditionals
 
 Commented-out unused code
 
-Inconsistent variable naming
+Inconsistent naming conventions
 
-These made the code less readable and harder to maintain.
-
-🔧 How did refactoring improve the code?
+✔️ How did refactoring improve the code?
 
 Refactoring made the code:
 
 Easier to read
 
-More modular
+More modular and reusable
 
-More consistent
+Less error-prone
 
-Simpler to extend
+Faster to debug
 
-Easier to test
+Cleaner for future developers
 
-By breaking complex functions into smaller ones and removing duplication, everything became clearer.
-
-🐞 How does avoiding code smells help debugging?
+✔️ How does avoiding code smells make debugging easier?
 
 Avoiding code smells:
 
-Makes bugs easier to locate
+Reduces confusion
 
-Reduces unexpected behavior
+Helps isolate bugs faster
 
-Prevents misunderstanding of logic
+Makes the code predictable
 
-Ensures future code changes don’t break things
+Improves collaboration
 
-Helps new developers understand the codebase quickly
+Prevents future technical debt
