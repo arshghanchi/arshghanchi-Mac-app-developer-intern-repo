@@ -714,3 +714,108 @@ Makes teamwork easier
 Improves long-term project health
 
 By applying these principles consistently, even small improvements create huge benefits over time.
+
+🧼 Code Formatting & Style Guides — Reflections
+⭐ Why is code formatting important?
+
+Consistent code formatting helps:
+
+Make the code easier for everyone to read
+
+Reduce misunderstandings between developers
+
+Prevent confusion caused by inconsistent spacing, quotes, or structure
+
+Speed up code reviews by removing unnecessary formatting differences
+
+Improve long-term maintainability of the codebase
+
+Keep teamwork smooth by ensuring everyone follows the same style
+
+Formatting isn’t just about aesthetics — it’s about clarity, precision, and collaboration.
+
+📘 Airbnb JavaScript Style Guide
+
+I reviewed the Airbnb style guide, which emphasizes:
+
+Clear naming conventions
+
+Consistent spacing and indentation
+
+Reliable use of semicolons and quotes
+
+Avoiding unused variables
+
+Preferring const and let over var
+
+Cleaner, modern JavaScript practices
+
+This guide is widely adopted and helps enforce high-quality JavaScript conventions.
+
+🔧 Installing ESLint & Prettier
+
+Tools installed:
+
+npm install eslint prettier eslint-config-prettier eslint-plugin-prettier -D
+
+
+ESLint configuration included Airbnb base rules + Prettier:
+
+{
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
+
+
+Prettier config:
+
+{
+  "singleQuote": true,
+  "semi": true,
+  "trailingComma": "all"
+}
+
+🐞 What issues did the linter detect?
+
+After running ESLint and Prettier, I found:
+
+Unused variables
+
+Inconsistent quote usage (" and ')
+
+Missing semicolons
+
+Incorrect spacing and indentation
+
+Variables declared but not used
+
+Functions missing return values
+
+Extra console logs
+
+Lines too long (violating max line length rules)
+
+These kinds of issues aren’t errors, but they harm readability and consistency.
+
+✨ Did formatting make the code easier to read?
+
+Absolutely.
+
+After formatting:
+
+The structure of the code became uniform
+
+Nesting and indentation were clearly visible
+
+Long lines were wrapped neatly
+
+Quotes, spacing, and semicolons became consistent
+
+The code looked more professional and organized
+
+It was easier to scan and understand the intent
+
+Formatting didn’t change the functionality, but it hugely improved the clarity.
