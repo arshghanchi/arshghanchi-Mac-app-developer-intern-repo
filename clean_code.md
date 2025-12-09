@@ -484,3 +484,100 @@ Ensures the code works under both normal and edge-case conditions
 Improves user experience by avoiding silent failures
 
 Robust code doesn’t just work  it fails gracefully.
+
+🔁 Avoiding Code Duplication — Refactoring Reflections
+⭐ Understanding the DRY Principle
+
+DRY = Don’t Repeat Yourself
+The idea is simple:
+
+If you repeat code in multiple places, you are creating more work, more risk, and more bugs.
+
+Duplicated code is dangerous because:
+
+If one copy has a bug, all copies have the bug
+
+Fixes must be repeated everywhere
+
+The codebase becomes harder to maintain
+
+Updates become inconsistent
+
+Refactoring removes these repetitions and centralises logic in one place.
+
+🔥 Example of Duplicated Code (Before Refactoring)
+function calculateCircleArea(radius) {
+  return 3.14 * radius * radius;
+}
+
+function calculateCylinderVolume(radius, height) {
+  return 3.14 * radius * radius * height;
+}
+
+❌ Issues
+
+3.14 * radius * radius is repeated
+
+If the formula changes (e.g., using Math.PI), you must update it in multiple places
+
+Violates the DRY principle
+
+Makes the code less flexible and error-prone
+
+✅ Refactored Version (After Removing Duplication)
+function calculateCircleArea(radius) {
+  return Math.PI * radius * radius;
+}
+
+function calculateBaseArea(radius) {
+  return Math.PI * radius * radius;
+}
+
+function calculateCylinderVolume(radius, height) {
+  return calculateBaseArea(radius) * height;
+}
+
+✔️ Improvements
+
+Shared logic moved into a reusable function
+
+Only one place to update formulas
+
+Follows DRY principle
+
+Code is clearer, more modular, and easier to test
+
+Fixes and improvements are applied everywhere automatically
+
+📝 Reflections
+⭐ What were the issues with duplicated code?
+
+Duplicated code caused:
+
+Extra maintenance work
+
+Higher risk of inconsistent fixes
+
+Harder debugging because multiple locations had similar logic
+
+More opportunity for mistakes when modifying behavior
+
+A bloated codebase with repeated functionality
+
+⭐ How did refactoring improve maintainability?
+
+Refactoring improved the code by:
+
+Centralising shared logic into one reusable function
+
+Making updates faster and safer
+
+Reducing file size and complexity
+
+Clarifying the intent of each function
+
+Improving readability and testability
+
+Ensuring consistency across the entire codebase
+
+By removing duplication, the code is now easier to understand and significantly easier to maintain.
