@@ -389,3 +389,98 @@ The overall file looked much more professional and easier to understand
 
 Formatting doesn't change how the code works it changes how the code feels to read.
 And that makes a big difference for teamwork and maintainability.
+
+
+🛡️ Handling Errors & Edge Cases — Refactoring Reflections
+⭐ Why error handling matters
+
+Good code doesn’t only work when given perfect inputs — it should also behave safely when things go wrong.
+Error handling helps prevent:
+
+Crashes
+
+Corrupted data
+
+Unexpected behavior
+
+Confusing user experiences
+
+Using guard clauses and early returns keeps code clean, simple, and more reliable.
+
+🔥 Original Function With Poor Error Handling (Before Refactoring)
+function getUserAge(user) {
+  return user.age + 1;
+}
+
+❌ Problems
+
+Breaks if user is null or undefined
+
+Breaks if user.age is missing
+
+Breaks if age is not a number
+
+No guard clauses → unsafe and unpredictable
+
+A single unexpected input would crash the entire program.
+
+✅ Refactored Version With Proper Error Handling
+function getUserAge(user) {
+  // Guard clause: ensure user exists
+  if (!user || typeof user !== "object") {
+    throw new Error("Invalid user object");
+  }
+
+  // Guard clause: ensure age is valid
+  if (typeof user.age !== "number" || user.age < 0) {
+    throw new Error("Invalid or missing age value");
+  }
+
+  return user.age + 1;
+}
+
+✔️ Improvements
+
+Clear guard clauses
+
+Prevents crashes
+
+Gives meaningful error messages
+
+Easy to debug
+
+Code flow is simple and readable
+
+Handles unexpected input safely
+
+📝 Reflections
+⭐ What was the issue with the original code?
+
+The original function assumed that:
+
+user always exists
+
+user.age is always defined
+
+age is always a valid number
+
+These assumptions are unsafe and would cause runtime errors.
+Without guard clauses, the code would crash whenever invalid input was passed.
+
+⭐ How does handling errors improve reliability?
+
+Adding proper error handling:
+
+Makes the function predictably safe
+
+Prevents crashes in real-world scenarios
+
+Provides helpful error messages for debugging
+
+Protects other parts of the system from unexpected failures
+
+Ensures the code works under both normal and edge-case conditions
+
+Improves user experience by avoiding silent failures
+
+Robust code doesn’t just work  it fails gracefully.
