@@ -819,3 +819,93 @@ The code looked more professional and organized
 It was easier to scan and understand the intent
 
 Formatting didn’t change the functionality, but it hugely improved the clarity.
+
+🏷️ Naming Variables & Functions — Reflections
+⭐ What makes a good variable or function name?
+
+A good name should be:
+
+Clear — It should immediately convey what the value or function does.
+
+Descriptive — It answers the question: “What is this?” or “What does this do?”
+
+Consistent — Follow the same naming conventions (camelCase, verbs for functions, nouns for values).
+
+Concise — Long names can be confusing, but names shouldn’t be too short either.
+
+Accurate — The name should match the behavior of the code.
+
+Examples of good names:
+
+✔️ totalPrice
+✔️ calculateAverage()
+✔️ isValidUser
+
+Poor names:
+
+❌ x, data1, tmp, foo, checkThing()
+
+🔥 Example of Poor Naming (Before Refactoring)
+function d(a, b) {
+  let x = a - b;
+  return x;
+}
+
+❌ Issues
+
+The function name d is meaningless.
+
+Parameters a and b give no context.
+
+Variable x doesn’t describe the result.
+
+Someone reading this must decipher the intent manually.
+
+✅ Refactored Code With Clear Names
+function calculateDifference(minuend, subtrahend) {
+  const difference = minuend - subtrahend;
+  return difference;
+}
+
+✔️ Improvements
+
+Function name clearly communicates its purpose.
+
+Parameter names match their mathematical meaning.
+
+Variable name difference clearly states what is returned.
+
+Code is readable without guessing.
+
+📝 Reflections
+⭐ What issues can arise from poorly named variables?
+
+Poor naming can lead to:
+
+Misunderstanding what the code is supposed to do
+
+Bugs caused by incorrect assumptions
+
+Difficulty debugging or modifying the function
+
+Confusion during code reviews
+
+Slower onboarding for new developers
+
+Bad names increase cognitive load and slow everyone down.
+
+⭐ How did refactoring improve code readability?
+
+Refactoring improved the code by:
+
+Making the intent of the function obvious
+
+Reducing ambiguity around what values represent
+
+Allowing the reader to understand the logic at a glance
+
+Creating clearer structure and reduced mental effort
+
+Making testing and debugging far easier
+
+Good naming is one of the simplest but most powerful clean-code improvements.
