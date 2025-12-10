@@ -160,6 +160,158 @@ Made PR reviews faster and smoother
 
 Demonstrated the value of automation in modern software teams
 
-#BadHeading
-Thiss sentence has bad speling tooo.
+🚀 Static Analysis Checks in CI/CD — Reflections
+⭐ What is the purpose of CI/CD?
+
+CI/CD (Continuous Integration & Continuous Deployment) helps teams deliver software in a reliable, automated, and efficient way.
+
+CI (Continuous Integration):
+
+Automatically runs tests, linting, and security checks on every push or pull request
+
+Ensures broken code never gets merged
+
+Helps developers catch issues early instead of later in the release cycle
+
+CD (Continuous Deployment/Delivery):
+
+Automatically deploys code to staging or production after CI passes
+
+Reduces manual deployment errors
+
+Speeds up delivery of new features and bug fixes
+
+Overall, CI/CD increases code quality, improves team productivity, and makes releases safer.
+
+🔧 Automating Styling Checks (Markdown + Spell Check)
+
+I set up a GitHub Actions workflow that:
+
+Runs markdownlint to enforce formatting rules
+
+Runs spell checking to catch typos
+
+Blocks merging if documentation does not follow project standards
+
+Example workflow used:
+
+name: Lint & Spell Check
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install markdownlint
+        run: npm install -g markdownlint-cli
+
+      - name: Run markdownlint
+        run: markdownlint "**/*.md"
+
+      - name: Spell Check
+        uses: rojopolis/spellcheck-github-actions@v0.30.0
+        with:
+          config_path: .spellcheck.yml
+
+
+This ensures every pull request is checked automatically before being approved.
+
+🪝 Git Hooks (Husky)
+
+I also experimented with Husky, which runs checks before commits.
+For example:
+
+npx husky add .husky/pre-commit "npm run lint"
+
+
+This prevents committing:
+
+Bad formatting
+
+Lint violations
+
+Typographical errors
+
+Husky enforces quality locally before code even reaches GitHub.
+
+🧪 Test Pull Request
+
+I opened a test PR to:
+
+Trigger the CI workflow
+
+Confirm markdownlint and spell checks were running
+
+Review the automated feedback
+
+Fix the formatting and spelling issues flagged
+
+Verify that the PR was blocked until all checks passed
+
+This testing showed how CI ensures consistent quality automatically.
+
+📝 Reflections
+⭐ How does automating style checks improve project quality?
+
+Automation:
+
+Ensures documentation and code stay consistent
+
+Reduces the need for manual review of formatting
+
+Catches typos and mistakes early
+
+Improves readability and professionalism
+
+Saves developer time and prevents repeated human errors
+
+Automated checks make the team more productive and the codebase more reliable.
+
+⭐ Challenges with enforcing checks in CI/CD
+
+Some challenges include:
+
+If checks are too strict, they can block work unnecessarily
+
+Developers may struggle to configure local linting tools
+
+CI pipelines can become slow with too many checks
+
+False positives in linters may cause frustration
+
+Extra time is needed to maintain the CI pipeline itself
+
+Balancing strictness and developer workflow is key.
+
+⭐ Differences in CI/CD for Small vs. Large Teams
+🟦 Small Projects
+
+Lightweight pipelines
+
+Simple linting + basic tests
+
+Fast builds
+
+Fewer restrictions
+
+Usually only 1–2 developers
+
+🟥 Large Teams / Enterprises
+
+Multiple workflows (tests, security scans, image builds, deploy steps)
+
+Strict rules (branch protection, mandatory reviews)
+
+Dedicated DevOps engineers
+
+Staged deployments (development → staging → production)
+
+Complex rollback and monitoring systems
+
+The bigger the team, the more CI/CD becomes essential to keep everyone in sync.
 
