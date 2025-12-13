@@ -180,3 +180,60 @@ Makes debugging and refactoring painful
 Leads to messy project history
 
 A project with vague commit messages becomes much harder to maintain.
+
+Git Concepts: Staging vs. Committing — Reflection
+Understanding the Difference Between Staging and Committing
+
+Staging and committing are two separate steps in Git, and experimenting with both helped me understand why Git is designed this way.
+
+Staging is the process of selecting which changes I want to include in my next commit. When I run git add <file>, the change moves into the staging area. This allows me to prepare specific edits without committing everything in my working directory.
+
+Committing finalizes those staged changes. When I run git commit -m "message", Git saves a snapshot of the staged content and records it in the project history. This becomes a permanent checkpoint that I can push, revert, or reference later.
+
+The key difference is that staging is about preparing changes, while committing is about saving them.
+
+Why Git Separates These Two Steps
+
+Through my experiment, I realized Git separates these actions to provide more control over how changes are recorded. Some reasons this separation is helpful include:
+
+It allows me to commit only part of my work instead of everything I changed.
+
+It encourages me to review changes before officially saving them.
+
+It helps maintain a clean and meaningful commit history.
+
+It prevents accidental commits of unfinished or unrelated work.
+
+This design makes Git flexible and powerful, especially when collaborating with others.
+
+When Staging Without Committing Is Useful
+
+There are situations where staging changes without committing makes sense. Some examples include:
+
+When I want to group several related changes into a single, meaningful commit.
+
+When I want to review changes in the staging area before deciding what to include.
+
+When I am working on a file that has unrelated edits, and I only want to commit a portion of them.
+
+When I want to prepare the commit gradually but am not ready to finalize it yet.
+
+These scenarios taught me that staging is a useful organizational tool, not just a technical requirement.
+
+What I Did During the Experiment
+
+To understand the process clearly, I modified a file in my repository and went through the following steps:
+
+I staged the file using git add <file>.
+
+I ran git status to confirm it was staged.
+
+I unstaged the file using git reset HEAD <file>.
+
+After reviewing the changes, I staged it again.
+
+I committed the file and wrote a commit message that explained the change.
+
+Finally, I pushed the commit to GitHub.
+
+Performing these steps manually made the staging workflow much clearer.
