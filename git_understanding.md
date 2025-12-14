@@ -237,3 +237,16 @@ I committed the file and wrote a commit message that explained the change.
 Finally, I pushed the commit to GitHub.
 
 Performing these steps manually made the staging workflow much clearer.
+
+Branching & Team Collaboration
+Why pushing directly to main is problematic
+
+Pushing directly to the main branch is risky because it bypasses safeguards that protect the stability of the codebase. Any mistake, bug, or incomplete feature immediately affects everyone using the repository. In team environments, this can break builds, disrupt deployments, and make it harder to track where issues were introduced. It also removes the opportunity for review and discussion before changes are merged.
+
+How branches help with reviewing code
+
+Branches allow developers to isolate their work from the main codebase. Changes can be developed, tested, and refined without impacting main. When a branch is ready, it can be reviewed through a pull request, where teammates can examine the code, leave comments, suggest improvements, and catch bugs early. This process improves code quality, knowledge sharing, and overall team confidence in what gets merged.
+
+What happens if two people edit the same file on different branches
+
+When two people edit the same file on different branches, Git keeps their changes separate. If the changes affect different parts of the file, Git can usually merge them automatically. If both people modify the same lines, a merge conflict occurs. The conflict must be resolved manually by choosing which changes to keep (or combining them) before the branch can be merged into main. This process ensures that conflicts are handled intentionally rather than silently overwriting someone’s work.
