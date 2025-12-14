@@ -352,3 +352,6 @@ Use it when your application was working before and is now broken, and you need 
 Comparison to manual review
 
 Manually checking commits is slow and error-prone. git bisect is faster, systematic, and accurate for identifying the bad commit.
+
+Adding PR test for Issue #47
+
