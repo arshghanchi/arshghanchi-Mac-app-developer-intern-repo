@@ -296,19 +296,59 @@ I would use git blame when trying to understand why a piece of code exists or wh
 What surprised me
 I initially thought it was about assigning fault, but I realized it is more about understanding history and decisions, which makes it very valuable for maintaining large, shared codebases.
 
-Debugging with git bisect
+# Git Bisect Test Scenario Proof
+
+## 1. Repository
+Test repo: [git-bisect-practice](https://github.com/arshghanchi/git-bisect-practice)
+
+---
+
+## 2. Sequence of Commits
+
+| Commit Hash | Message                   | Description                                       |
+|------------|---------------------------|--------------------------------------------------|
+| 8fe4090    | Initial working version    | Created `app.txt` with `Result: 10`            |
+| 7b94282    | Update result to 20       | Changed `app.txt` to `Result: 20` (still working) |
+| 8bf5dca    | Introduce bug             | Introduced typo `Reslt: ??`                     |
+| 0ff8912    | Bug still present         | Further changed file to `Reslt: ???`           |
+
+---
+
+## 3. Git Bisect Session
+
+```bash
+# Start bisect
+git bisect start
+
+# Mark current commit as bad
+git bisect bad
+
+# Mark a known good commit
+git bisect good 7b94282
+
+# Git checks out commit 8bf5dca
+cat app.txt
+# Output:
+# Reslt: ??
+
+# Mark this commit as bad
+git bisect bad
+
+# Git identifies the first bad commit:
+# 8bf5dca is the first bad commit
+
+# End bisect session
+git bisect reset
+
+. Reflection
 What does git bisect do?
 
-git bisect helps identify the exact commit that introduced a bug by using a binary search approach through the commit history. Instead of checking every commit one by one, Git automatically narrows down the range by repeatedly switching between “good” and “bad” commits until the problematic commit is found. This makes debugging much faster, especially in repositories with long histories.
+git bisect automatically finds the commit that introduced a bug by testing commits between a known good and bad commit.
 
-When would I use it in a real-world debugging situation?
+When would you use it?
 
-I would use git bisect when a bug is present in the current version of a project, but I know that the project worked correctly at some point in the past. This is common in long-running projects where many developers contribute changes over time. git bisect is especially useful when the bug is not obvious and cannot be traced to a recent commit through simple inspection.
+Use it when your application was working before and is now broken, and you need to find the exact commit causing the issue.
 
-How does it compare to manually reviewing commits?
+Comparison to manual review
 
-Compared to manually reviewing commits, git bisect is far more efficient and reliable. Manually checking commits can be slow, error-prone, and impractical when there are many changes. git bisect automates the process and reduces the number of commits that need to be tested, making it easier to focus on the exact change that caused the issue. This saves time and helps avoid guesswork.
-
-What I learned from experimenting with git bisect
-
-Creating a bug intentionally and then tracking it down helped me understand how structured and logical the bisect process is. Marking commits as “good” or “bad” made the debugging process feel systematic rather than overwhelming. This experiment showed me how valuable git bisect can be in team projects where understanding when and why a bug was introduced is critical.
+Manually checking commits is slow and error-prone. git bisect is faster, systematic, and accurate for identifying the bad commit.
