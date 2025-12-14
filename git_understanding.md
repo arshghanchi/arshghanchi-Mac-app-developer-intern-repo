@@ -295,3 +295,20 @@ I would use git blame when trying to understand why a piece of code exists or wh
 
 What surprised me
 I initially thought it was about assigning fault, but I realized it is more about understanding history and decisions, which makes it very valuable for maintaining large, shared codebases.
+
+Debugging with git bisect
+What does git bisect do?
+
+git bisect helps identify the exact commit that introduced a bug by using a binary search approach through the commit history. Instead of checking every commit one by one, Git automatically narrows down the range by repeatedly switching between “good” and “bad” commits until the problematic commit is found. This makes debugging much faster, especially in repositories with long histories.
+
+When would I use it in a real-world debugging situation?
+
+I would use git bisect when a bug is present in the current version of a project, but I know that the project worked correctly at some point in the past. This is common in long-running projects where many developers contribute changes over time. git bisect is especially useful when the bug is not obvious and cannot be traced to a recent commit through simple inspection.
+
+How does it compare to manually reviewing commits?
+
+Compared to manually reviewing commits, git bisect is far more efficient and reliable. Manually checking commits can be slow, error-prone, and impractical when there are many changes. git bisect automates the process and reduces the number of commits that need to be tested, making it easier to focus on the exact change that caused the issue. This saves time and helps avoid guesswork.
+
+What I learned from experimenting with git bisect
+
+Creating a bug intentionally and then tracking it down helped me understand how structured and logical the bisect process is. Marking commits as “good” or “bad” made the debugging process feel systematic rather than overwhelming. This experiment showed me how valuable git bisect can be in team projects where understanding when and why a bug was introduced is critical.
