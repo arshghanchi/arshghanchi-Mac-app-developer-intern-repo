@@ -352,6 +352,75 @@ Use it when your application was working before and is now broken, and you need 
 Comparison to manual review
 
 Manually checking commits is slow and error-prone. git bisect is faster, systematic, and accurate for identifying the bad commit.
+# Pull Request Test Scenario Proof
+
+## 1. Repository
+Repo: [Mac App Developer Intern Repo](https://github.com/arshghanchi/arshghanchi-Mac-app-developer-intern-repo)  
+Related Issue: [Issue #47](https://github.com/arshghanchi/arshghanchi-Mac-app-developer-intern-repo/issues/47)
+
+---
+
+## 2. Branch Creation
+
+- Branch Name: `feature/pr-test-issue47`  
+- Created directly on GitHub via the branch dropdown  
+
+---
+
+## 3. File Changes
+
+- Edited `git_understanding.md`  
+- Added a line:
 
 Adding PR test for Issue #47
 
+yaml
+Copy code
+
+- Committed directly to `feature/pr-test-issue47` branch  
+
+---
+
+## 4. Pull Request
+
+- PR Title: `Add PR test note for Issue #47`  
+- PR Description:
+
+This PR demonstrates creating a small change to test Pull Request workflow.
+Related to Issue #47: https://github.com/arshghanchi/arshghanchi-Mac-app-developer-intern-repo/issues/47
+
+markdown
+Copy code
+
+- PR Link: [View Pull Request](https://github.com/arshghanchi/arshghanchi-Mac-app-developer-intern-repo/pull/???)  
+*(replace ??? with your PR number)*
+
+- GitHub Status:  
+No conflicts with base branch
+Merging can be performed automatically.
+
+yaml
+Copy code
+
+- PR was **merged** and branch was **deleted**  
+
+---
+
+## 5. Reflection on Pull Requests
+
+### Why are PRs important in a team workflow?
+PRs allow teams to review code before merging, catch bugs early, discuss design choices, and maintain code quality. They enable collaboration and accountability.
+
+### What makes a well-structured PR?
+- Clear title and description  
+- Reference to a related issue (#47 in this case)  
+- Focused, minimal, meaningful commits  
+- Proper documentation and testing  
+- Readable code with comments if necessary  
+
+### What did I learn from reviewing an open-source PR?
+- Reviewers provide suggestions to improve clarity, performance, and consistency.  
+- Discussions clarify design decisions and prevent mistakes.  
+- Well-written PRs save time and make reviews smoother.
+
+---
