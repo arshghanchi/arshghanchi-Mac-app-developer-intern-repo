@@ -250,3 +250,48 @@ Branches allow developers to isolate their work from the main codebase. Changes 
 What happens if two people edit the same file on different branches
 
 When two people edit the same file on different branches, Git keeps their changes separate. If the changes affect different parts of the file, Git can usually merge them automatically. If both people modify the same lines, a merge conflict occurs. The conflict must be resolved manually by choosing which changes to keep (or combining them) before the branch can be merged into main. This process ensures that conflicts are handled intentionally rather than silently overwriting someone’s work.
+
+Advanced Git Commands & When to Use Them
+git checkout main -- <file>
+
+What it does
+This command restores a specific file from the main branch without touching other files or uncommitted changes in my working directory.
+
+When I would use it
+I would use this when I accidentally break or overwrite a file and want to quickly revert just that file to a known good version from main, without discarding other work in progress. This is especially useful in large projects where only one file needs to be fixed.
+
+What surprised me
+I was surprised that this command only affects the specified file and does not interfere with other modified files, making it very precise and safe to use.
+
+git cherry-pick <commit>
+
+What it does
+This command applies a single commit from another branch onto the current branch without merging the entire branch.
+
+When I would use it
+I would use cherry-pick when a branch contains one important fix or feature that I need immediately, but the rest of the branch is not ready or relevant. This is common in long-running projects when a bug fix needs to be applied quickly to main or a release branch.
+
+What surprised me
+I found it interesting that cherry-picking creates a new commit with the same changes but a different commit hash. It helped me understand that Git tracks changes, not just commit IDs.
+
+git log
+
+What it does
+This command shows the commit history of the repository, including commit messages, authors, and timestamps.
+
+When I would use it
+I would use git log to understand how the project evolved over time, track when changes were introduced, or find specific commits related to bugs or features. It is very useful for debugging and reviewing project history in team environments.
+
+What surprised me
+Seeing how clearly the history tells the story of the project made me realize how important meaningful commit messages are for collaboration.
+
+git blame <file>
+
+What it does
+This command shows who last modified each line of a file and when that change was made.
+
+When I would use it
+I would use git blame when trying to understand why a piece of code exists or when a bug was introduced. It helps identify the context behind changes and who to ask for clarification in a team setting.
+
+What surprised me
+I initially thought it was about assigning fault, but I realized it is more about understanding history and decisions, which makes it very valuable for maintaining large, shared codebases.
