@@ -1,0 +1,242 @@
+# Running FocusBear (Mac) in Xcode — From Scratch
+
+This guide helps you clone the project and run the macOS app locally in Xcode.  
+It also documents common setup issues (Pods/SPM dependencies, deployment target errors, and “app built but nothing shows”).
+
+---
+
+## Prerequisites
+
+- **macOS** (recommended: 11.0+)
+- **Xcode** (recommended: Xcode 15+ / 16)
+- **Git**
+- **CocoaPods**
+  ```bash
+  sudo gem install cocoapods
+  # or via Homebrew:
+  brew install cocoapods
+
+) Clone the repository
+git clone <REPO_URL>
+cd Mac-App
+
+
+If you cloned with HTTPS and Git asks for credentials, use a GitHub Personal Access Token (PAT) instead of your password.
+
+2) Install iOS/macOS dependencies (CocoaPods)
+
+This project uses CocoaPods for some dependencies and Swift Package Manager (SPM) for others.
+
+Install pods
+pod install --repo-update
+
+
+✅ Important: Always open the workspace after installing pods.
+
+3) Open the correct Xcode file
+
+Open:
+
+✅ FocusBear.xcworkspace
+❌ Do NOT open FocusBear.xcodeproj (Pods won’t link correctly)
+
+4) Set the scheme and run
+
+In Xcode (top bar):
+
+Scheme: Focus Bear (the main app target)
+
+Destination: My Mac
+
+Run:
+
+Cmd + R (Run)
+
+Some builds may succeed but the app may not appear as a normal window — it can behave like a menu bar app.
+
+5) If the app builds but you don’t “see” anything
+
+This app may launch without a visible main window.
+
+Try:
+
+Look for the app icon in the menu bar (top-right)
+
+Check Activity Monitor to confirm the process is running
+
+In Xcode: open Debug Area → Console (Shift + Cmd + Y) to see logs
+
+Also confirm you are running the correct scheme:
+
+If you see "Finished running FBHelper", switch scheme back to Focus Bear.
+
+Troubleshooting (Common Setup Issues)
+
+Below are issues encountered when setting up from scratch and how they were resolved.
+
+A) CocoaPods module dependency error (e.g. CTweetNacl, PusherSwift)
+Symptoms
+
+Unable to find module dependency: 'CTweetNacl'
+
+No such module 'PusherSwift'
+
+Fix checklist
+
+Make sure you opened FocusBear.xcworkspace
+
+Reinstall pods cleanly:
+
+rm -rf Pods Podfile.lock
+pod install --repo-update
+
+
+Ensure the Podfile target name matches the Xcode target exactly
+
+Example target name may be Focus Bear or FocusBear (must match character-for-character)
+
+Clean build folder:
+
+Product → Clean Build Folder (hold Option to reveal)
+
+B) macOS deployment target errors (e.g. Data is only available in macOS 10.10+)
+Symptoms
+
+Data is only available in macOS 10.10 or newer
+
+Lots of errors inside a Pod source file (e.g. TweetNacl.swift)
+
+Why it happens
+
+Some pods require a higher minimum macOS deployment target.
+
+Fix
+
+In Xcode, set Minimum Deployment Target (for main app + helper) to a modern version (e.g. macOS 11.0 or higher).
+
+In Podfile, set platform:
+
+platform :osx, '11.0'
+
+C) libarclite error (Xcode 16 + old deployment target)
+Symptoms
+
+SDK does not contain 'libarclite' ... try increasing the minimum deployment target
+
+Log mentions target set to 10.10 and supported range starts at 10.13+
+
+Fix
+
+Make sure Pods also inherit the correct deployment target (not just the app).
+
+Add this to the bottom of your Podfile:
+
+post_install do |installer|
+  installer.pods_project.targets.each do |t|
+    t.build_configurations.each do |config|
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '11.0'
+    end
+  end
+end
+
+
+Then reinstall pods:
+
+rm -rf Pods Podfile.lock
+pod install --repo-update
+
+
+(Optional) clear DerivedData if the old setting persists:
+
+rm -rf ~/Library/Developer/Xcode/DerivedData/FocusBear-*
+
+D) Missing Swift Package products (SPM) — Auth0, Swifter, Sparkle
+Symptoms
+
+Missing package product 'Auth0'
+
+Missing package product 'Swifter'
+
+No such module 'Sparkle'
+
+Fix
+
+In Xcode:
+
+File → Packages → Reset Package Caches
+
+File → Packages → Resolve Package Dependencies
+
+If still missing, re-add packages:
+
+File → Add Package Dependencies…
+
+Add:
+
+Auth0: https://github.com/auth0/Auth0.swift
+
+Swifter: https://github.com/httpswift/swifter
+
+Sparkle: https://github.com/sparkle-project/Sparkle
+
+Ensure the package products are added to the Focus Bear target:
+
+Target → General → Frameworks, Libraries, and Embedded Content
+
+Add the product (e.g. Sparkle) if needed
+
+✅ Tip: Avoid adding a manual Sparkle.framework file if you're using SPM.
+Keep the SPM product entry (named Sparkle), not a separate .framework.
+
+E) Clean build / reset steps (when things get “stuck”)
+
+If Xcode behaves inconsistently after dependency changes:
+
+Clean build folder:
+
+Product → Clean Build Folder (Option key)
+
+Reset SPM caches:
+
+File → Packages → Reset Package Caches
+
+Remove DerivedData:
+
+rm -rf ~/Library/Developer/Xcode/DerivedData/FocusBear-*
+
+Notes for contributors
+
+This project uses a mix of CocoaPods and SPM.
+
+When debugging dependency issues, always check:
+
+workspace vs project file (.xcworkspace vs .xcodeproj)
+
+deployment target alignment (app + pods + packages)
+
+correct scheme (main app vs helper targets)
+
+Need help?
+
+If you get stuck, please open an issue and include:
+
+Your macOS version
+
+Xcode version
+
+The exact error text (copy from Xcode build log)
+
+Whether you opened .xcworkspace
+
+
+### Quick customization notes (optional)
+- Replace `<REPO_URL>` with your actual repo URL.
+- If your repo folder name isn’t `Mac-App`, update the `cd` line.
+- If you want, I can also add:
+  - a “Known Good Versions” section (macOS/Xcode/CocoaPods)
+  - a “First run checklist” (permissions, menu bar icon, login)
+  - a “FAQ” section
+
+If you paste your **actual Podfile** and the exact **SPM package list** you ended up with, I can tailor the README so it matches your project perfectly (target names, versions, and which dependencies are Pods vs SPM).
+
+
